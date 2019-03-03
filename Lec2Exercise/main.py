@@ -5,8 +5,8 @@ from machine import UART
 pycom.heartbeat(False)
 uart = UART(0, 115200)
 
-while(True):
+while True:
     msg = uart.readline()
-    if(msg != None):
+    if msg is not None:
         print("Message: " + msg.decode())
     time.sleep(1)
