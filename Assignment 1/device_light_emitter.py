@@ -9,11 +9,14 @@ pycom.rgbled(0x000000)
 
 while True:
     color = uart.readline()
-    if color is "True":
-        print("Setting LED color to on")
-        pycom.rgbled(0xffffff)
-        
-    if color is "False":
-        print("Setting LED color to off")
-        pycom.rgbled(0x000000)
-    time.sleep(1)
+    if color is not None:
+        color_text = color.decode().rstrip()
+        print(color_text)
+        if color_text == "True":
+            print("Setting LED color to on")
+            pycom.rgbled(0xffffff)
+            
+        if color_text == "False":
+            print("Setting LED color to off")
+            pycom.rgbled(0x000000)
+        time.sleep(1)

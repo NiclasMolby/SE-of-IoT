@@ -13,7 +13,7 @@ def write_to_device(msg):
 		return send
 
 def listen_to_device():
-    with serial.Serial("COM3", 116000, timeout=None) as ser:
+    with serial.Serial("/dev/tty.usbmodemPy3434341", 116000, timeout=None) as ser:
         received = time.time()
         print("Reading")
         input = ser.readline()
@@ -25,8 +25,9 @@ def log_to_file(send, recieved):
 
 def main():
 	msg = sys.argv[1]
-	write_to_device(msg)
-    log_to_file(write_to_device("True"), listen_to_device)
+	#write_to_device(msg)
+	listen_to_device()
+    #log_to_file(write_to_device("True"), listen_to_device)
 
 if __name__ == '__main__':
 	main()
