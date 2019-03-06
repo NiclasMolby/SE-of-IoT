@@ -6,8 +6,9 @@ from machine import UART
 pycom.heartbeat(False)
 uart = UART(0, 116000)
 
-light_sensor = LTR329ALS01()
-while True:
-    print(light_sensor.light())
-    uart.write(str(light_sensor.light()[0]) + str(light_sensor.light()[1]) + "\n")
-    time.sleep(1)
+def start_sensing():
+    light_sensor = LTR329ALS01()
+    while True:
+        print(str(light_sensor.light()))
+        #uart.write(str(light_sensor.light()[0]) + str(light_sensor.light()[1]) + "\n")
+        time.sleep(1)
