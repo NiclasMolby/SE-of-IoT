@@ -1,0 +1,7 @@
+import device_light_sensor
+import device_light_emitter
+import device_temperatur_sensor
+
+device_temperatur_sensor.start_sensing()
+#device_light_emitter.emit_light()
+#device_light_sensor.start_sensing()
