@@ -11,3 +11,5 @@ def start_sensing():
     while(True):
         print(temperature_sensor.temperature())
         time.sleep(1)
+
+start_sensing()
